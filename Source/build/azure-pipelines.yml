@@ -22,9 +22,9 @@ name: $(Build.BuildId)
 
 variables:
 - name: VMImage
-  value: windows-2019
+  value: windows-latest
 - name: MacImage
-  value: macOS-10.14
+  value: macOS-latest
 - name: BuildConfiguration
   value: Release
 - name: BuildPlatform
@@ -133,7 +133,7 @@ stages:
               rootFolderOrFile: '$(DLLArtifactsPath)'
               archiveFile: '$(DLLArtifactsZip)'
 
-          - task: GithubRelease@0 
+          - task: GithubRelease@0
             displayName: 'Create GitHub Release'
             inputs:
               gitHubConnection: 'Prism GitHub Connection'
